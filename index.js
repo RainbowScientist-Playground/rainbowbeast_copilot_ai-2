@@ -12,7 +12,7 @@ app.post("/", express.json(), async (req, res) => {
   console.log("User:", user.data.login);
 
   // Parse the request payload and log it.
-  const payload = req.body;
+  const payload = JSON.stringify(req.body).replace(/\n|\r/g, "");
   console.log("Payload:", payload);
 
   // Insert a special pirate-y system message in our message list.
